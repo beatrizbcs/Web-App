@@ -1,0 +1,125 @@
+/* Reset básico */
+body, h1, h2, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7F7F7; /* Fundo neutro claro */
+    color: #3C3C3C; /* Texto em cinza escuro */
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #3C3C3C; /* Cinza escuro no cabeçalho */
+    color: white;
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+/* Formulário de cadastro */
+#registerSection {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#registerSection h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #4F4F4F; /* Cinza intermediário para o título */
+}
+
+#registerForm input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #3C3C3C; /* Cinza escuro */
+    border-radius: 5px;
+}
+
+#registerForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3C3C3C; /* Cinza escuro no botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#registerForm button:hover {
+    background-color: #2A2A2A; /* Mais escuro no hover */
+}
+
+/* Formulário de emoções e histórico */
+#mainSection {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #3C3C3C;
+    border-radius: 8px;
+    background-color: #F7F7F7;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #3C3C3C;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2A2A2A;
+}
+
+/* Histórico */
+#historyList li {
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Cores dinâmicas */
+.feliz { background-color: #FDF4C3; color: #605C02; }
+.triste { background-color: #D0E8F2; color: #2A5368; }
+.raiva { background-color: #F8B3B3; color: #B02A2A; }
+.nojo { background-color: #D9F4D9; color: #3E624D; }
+.medo { background-color: #E0D7F5; color: #5D3C85; }

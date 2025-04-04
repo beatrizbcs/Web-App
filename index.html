@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Emotiva</h1>
+    </header>
+    <main>
+        <!-- Tela de cadastro -->
+        <section id="registerSection">
+            <h2>Cadastre-se</h2>
+            <form id="registerForm">
+                <input type="text" id="name" placeholder="Seu nome" required>
+                <input type="email" id="email" placeholder="Seu e-mail" required>
+                <input type="password" id="password" placeholder="Crie uma senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <!-- Tela principal (oculta até o cadastro) -->
+        <section id="mainSection" style="display: none;">
+            <h2>Qual emoção você está sentindo agora?</h2>
+            <form id="cadastroForm">
+                <div class="mood-options">
+                    <label>
+                        😊
+                        <input type="radio" name="mood" value="feliz" required>
+                    </label>
+                    <label>
+                        😭
+                        <input type="radio" name="mood" value="triste">
+                    </label>
+                    <label>
+                        😡
+                        <input type="radio" name="mood" value="raiva">
+                    </label>
+                    <label>
+                        🤢
+                        <input type="radio" name="mood" value="nojo">
+                    </label>
+                    <label>
+                        😨
+                        <input type="radio" name="mood" value="medo">
+                    </label>
+                </div>
+                <textarea id="userInput" placeholder="Escreva algo sobre seu sentimento..." required></textarea>
+                <button type="submit">Registrar</button>
+            </form>
+            <div id="moodHistory">
+                <h2>Histórico</h2>
+                <ul id="historyList"></ul>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
