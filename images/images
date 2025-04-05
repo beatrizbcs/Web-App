@@ -1,0 +1,8 @@
+projeto/
+├── index.html
+├── style.css
+├── script.js
+├── manifest.json
+├── service-worker.js
+└── images/
+    └── emotiva.png
