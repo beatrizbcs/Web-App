@@ -1,62 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotiva</title>
+    <meta name="description" content="Emotiva - Um app para registrar e acompanhar suas emoções.">
+    <meta name="author" content="Equipe Emotiva">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
+    <title>Emotiva - Cadastro</title>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js")
+                .then(() => console.log("Service Worker registrado com sucesso"))
+                .catch(err => console.error("Erro ao registrar o Service Worker:", err));
+        }
+    </script>
 </head>
 <body>
     <header>
+        <img src="c:\Users\crisc\Downloads\emotiva.png.png" alt="Logo do Emotiva" class="logo">
         <h1>Emotiva</h1>
     </header>
-    <main>
-        <!-- Tela de cadastro -->
-        <section id="registerSection">
+    <main id="main-content">
+        <!-- Página de Cadastro -->
+        <section id="signup-page">
             <h2>Cadastre-se</h2>
-            <form id="registerForm">
-                <input type="text" id="name" placeholder="Seu nome" required>
-                <input type="email" id="email" placeholder="Seu e-mail" required>
-                <input type="password" id="password" placeholder="Crie uma senha" required>
-                <button type="submit">Cadastrar</button>
+            <form id="signup-form">
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" id="username" placeholder="Digite seu nome" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+                
+                <button type="submit" class="signup-button">Cadastrar</button>
             </form>
         </section>
 
-        <!-- Tela principal (oculta até o cadastro) -->
-        <section id="mainSection" style="display: none;">
-            <h2>Qual emoção você está sentindo agora?</h2>
-            <form id="cadastroForm">
-                <div class="mood-options">
-                    <label>
-                        😊
-                        <input type="radio" name="mood" value="feliz" required>
-                    </label>
-                    <label>
-                        😭
-                        <input type="radio" name="mood" value="triste">
-                    </label>
-                    <label>
-                        😡
-                        <input type="radio" name="mood" value="raiva">
-                    </label>
-                    <label>
-                        🤢
-                        <input type="radio" name="mood" value="nojo">
-                    </label>
-                    <label>
-                        😨
-                        <input type="radio" name="mood" value="medo">
-                    </label>
-                </div>
-                <textarea id="userInput" placeholder="Escreva algo sobre seu sentimento..." required></textarea>
-                <button type="submit">Registrar</button>
+        <!-- Página de Registro de Emoções -->
+        <section id="emotion-page" class="hidden">
+            <h2>Como você está se sentindo hoje?</h2>
+            <form id="emotion-form">
+                <label for="emotion">Escolha sua emoção:</label>
+                <select id="emotion">
+                    <option value="feliz">Feliz</option>
+                    <option value="triste">Triste</option>
+                    <option value="ansioso">Ansioso</option>
+                    <option value="calmo">Calmo</option>
+                </select>
+
+                <label for="description">Descreva o que está sentindo:</label>
+                <textarea id="description" rows="4" placeholder="Escreva aqui..."></textarea>
+
+                <button type="submit" class="emotion-button">Registrar</button>
             </form>
-            <div id="moodHistory">
-                <h2>Histórico</h2>
-                <ul id="historyList"></ul>
-            </div>
+
+            <h2>Localização</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.3580720838305!2d-34.887759899999996!3d-8.0525654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1997eb26b1bb%3A0x38559aaa17ddef7c!2sFaculdade%20Senac%20Pernambuco!5e0!3m2!1spt-BR!2sbr!4v1684589576956!5m2!1spt-BR!2sbr"
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </section>
     </main>
+    <footer>
+        <p>© 2025 Emotiva - Sua jornada emocional.</p>
+        <div class="contact-links">
+            <a href="mailto:contato@emotiva.com">Envie um E-mail</a> |
+            <a href="tel:+551199999999">Ligar para Nós</a> |
+            <a href="sms:+551199999999">Envie um SMS</a>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

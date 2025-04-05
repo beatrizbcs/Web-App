@@ -1,38 +1,35 @@
-// Lógica de cadastro
-document.getElementById('registerForm').addEventListener('submit', function(event) {
+// Registro do Service Worker
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker registrado com sucesso"))
+        .catch(err => console.error("Erro ao registrar o Service Worker:", err));
+}
+
+// Transição do Cadastro para o Registro de Emoções
+document.querySelector("#signup-form").addEventListener("submit", event => {
     event.preventDefault();
+    const username = document.querySelector("#username").value;
+    const email = document.querySelector("#email").value;
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    if (!name || !email || !password) {
-        alert('Por favor, preencha todos os campos.');
-        return;
+    if (username && email) {
+        alert(`Bem-vindo(a), ${username}! Cadastro realizado com sucesso.`);
+        // Esconde a página de cadastro e exibe a página de emoções
+        document.querySelector("#signup-page").classList.add("hidden");
+        document.querySelector("#emotion-page").classList.remove("hidden");
+    } else {
+        alert("Por favor, preencha todos os campos antes de continuar.");
     }
-
-    // Exibe a seção principal e oculta a de cadastro
-    document.getElementById('registerSection').style.display = 'none';
-    document.getElementById('mainSection').style.display = 'block';
 });
 
-// Lógica de emoções e histórico
-document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+// Registro de Emoções
+document.querySelector("#emotion-form").addEventListener("submit", event => {
     event.preventDefault();
+    const emotion = document.querySelector("#emotion").value;
+    const description = document.querySelector("#description").value;
 
-    const mood = document.querySelector('input[name="mood"]:checked').value;
-    const userText = document.getElementById('userInput').value.trim();
-
-    if (!userText) {
-        alert('Por favor, escreva algo sobre o seu sentimento.');
-        return;
+    if (emotion && description) {
+        alert(`Emoção registrada:\n${emotion}\nDescrição:\n${description}`);
+    } else {
+        alert("Por favor, preencha todos os campos antes de registrar sua emoção.");
     }
-
-    const historyList = document.getElementById('historyList');
-    const newItem = document.createElement('li');
-    newItem.classList.add(mood);
-    newItem.textContent = `Humor: ${mood} | Comentário: ${userText}`;
-    historyList.appendChild(newItem);
-
-    document.getElementById('cadastroForm').reset();
 });
