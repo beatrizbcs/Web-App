@@ -25,7 +25,7 @@ main {
 }
 
 section.hidden {
-    display: none;
+    display: none; /* Ocultar seções não ativas */
 }
 
 iframe {
@@ -42,16 +42,27 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 14px;
+}
+
+footer .contact-links a {
+    color: #ADD8E6;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer .contact-links a:hover {
+    text-decoration: underline;
 }
 
 button {
     background-color: #ADD8E6;
+    color: #333;
     border: none;
     padding: 10px 20px;
+    cursor: pointer;
     margin-top: 10px;
     border-radius: 5px;
-    cursor: pointer;
-    color: #333;
 }
 
 button:hover {
@@ -65,4 +76,31 @@ textarea, input {
     margin: 10px auto;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+textarea {
+    resize: vertical; /* Permitir redimensionamento vertical */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    header .logo {
+        max-width: 80px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }

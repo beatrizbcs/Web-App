@@ -5,7 +5,7 @@ if ("serviceWorker" in navigator) {
         .catch(err => console.error("Erro ao registrar o Service Worker:", err));
 }
 
-// Cadastro e transição para Registro de Emoções
+// Transição do Cadastro para a Página de Registro de Emoções
 document.querySelector("#signup-form").addEventListener("submit", event => {
     event.preventDefault();
     const username = document.querySelector("#username").value;
@@ -13,6 +13,7 @@ document.querySelector("#signup-form").addEventListener("submit", event => {
 
     if (username && email) {
         alert(`Bem-vindo(a), ${username}! Cadastro realizado com sucesso.`);
+        // Esconde a página de cadastro e exibe a página de registro
         document.querySelector("#signup-page").classList.add("hidden");
         document.querySelector("#emotion-page").classList.remove("hidden");
     } else {
